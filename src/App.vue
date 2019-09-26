@@ -4,7 +4,7 @@
       <v-container>
         <app-header></app-header>
         <hr>
-      <v-layout justify="space-around">
+      <v-layout class="pt-6" justify="space-around">
         <v-flex xs-6>
           <servers></servers>
         </v-flex>

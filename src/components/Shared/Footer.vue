@@ -1,5 +1,5 @@
 <template>
-        <p class="pl-6">All Servers are managed here</p>
+        <p class="pl-6 pt-4">All Servers are managed here</p>
 </template>
 
 <script>
