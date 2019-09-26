@@ -1,15 +1,16 @@
 <template>
-  <v-app xs-8>
+  <v-app>
     <v-content>
       <v-container>
         <app-header></app-header>
-    <hr>
-      <v-layout>
+        <hr>
+      <v-layout justify="space-around">
         <v-flex xs-6>
-        <servers></servers>
+          <servers></servers>
         </v-flex>
+
         <v-flex xs-6>
-        <app-server-details></app-server-details>
+          <app-server-details></app-server-details>
         </v-flex>
       </v-layout>
     <app-footer></app-footer>
@@ -36,5 +37,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

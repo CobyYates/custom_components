@@ -1,5 +1,5 @@
 <template>
-    <p>Server Details are currently not updated</p>
+    <p class="pl-3">Server Details are currently not updated</p>
 </template>
 
 <script>

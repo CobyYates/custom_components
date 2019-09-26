@@ -1,7 +1,5 @@
 <template>
-    <div class="row">
-        <p>All Servers are managed here</p>
-    </div>
+        <p class="pl-6">All Servers are managed here</p>
 </template>
 
 <script>
