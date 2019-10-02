@@ -6,8 +6,10 @@
         <hr>
       <v-layout class="pt-6" justify="space-around">
         <v-flex xs-6>
-          <servers></servers>
+          <servers v-for="index in 5" :status="status"></servers>
         </v-flex>
+
+        <v-btn color="success" @click="refreshServers">Restart Servers</v-btn>
 
         <v-flex xs-6>
           <app-server-details></app-server-details>
@@ -26,13 +28,23 @@ import Header from './components/Shared/Header.vue';
     import ServerDetails from './components/Server/ServerDetails.vue';
 
 export default {
-        components: {
-            appHeader: Header,
-            Servers,
-            'app-server-details': ServerDetails,
-            'app-footer': Footer
-        }
+  data: function() {
+      return {
+        status: 'Critical'
+      };
+  },
+  methods: {
+    refreshServers() {
+      this.status = 'Restarting...'
     }
+  },
+  components: {
+      appHeader: Header,
+      Servers,
+      'app-server-details': ServerDetails,
+      'app-footer': Footer
+  }
+}
 
 </script>
 

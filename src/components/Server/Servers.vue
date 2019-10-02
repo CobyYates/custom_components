@@ -1,17 +1,34 @@
 <template>
     <v-flex>
-        <v-card class="mx-auto py-2" max-width="400" tile>
-            <v-list-item v-for="index in 5">
-                <v-list-item-content>
-                    <v-list-item-title>Server #{{ index }}<v-divider class="mt-3"></v-divider></v-list-item-title>
-                </v-list-item-content>
-            </v-list-item>
-        </v-card>
+        <v-banner max-width="500" :sticky="sticky" :single-line="singleLine" :icon="icon"
+          :color="color" :icon-color="iconColor" :elevation="elevation">
+
+          Server #{{ index }} - Status {{ status }}
+
+          <template v-slot:actions>
+            <v-btn @click="changeStatus" text color="teal accent-4">
+              Change Status
+            </v-btn>
+          </template>
+        </v-banner>
+
     </v-flex>
 </template>
 
 <script>
-
+ export default {
+     props: ['status'],
+    data: function() {
+        return {
+            status: 'Critical'
+        }
+    },
+    methods: {
+        changeStatus() {
+            this.status = 'Normal';
+        }
+    }
+}
 </script>
 
 <style scoped>
