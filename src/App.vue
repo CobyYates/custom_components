@@ -5,15 +5,15 @@
         <app-header></app-header>
         <hr>
       <v-layout class="pt-6" justify="space-around">
-        <v-flex xs-6>
-          <servers v-for="index in 5" :status="status"></servers>
+        <v-flex xs-8>
+          <servers v-for="(child, index) in 5" :child="child" :status="status" @statusWasReset="status = $event"></servers>
         </v-flex>
 
-        <v-btn color="success" @click="refreshServers">Restart Servers</v-btn>
-
-        <v-flex xs-6>
+        <v-flex xs-4>
+          <v-btn class="mb-4" color="success" @click="refreshServers">Restart Servers</v-btn>
           <app-server-details></app-server-details>
         </v-flex>
+
       </v-layout>
     <app-footer></app-footer>
       </v-container>

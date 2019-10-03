@@ -1,10 +1,18 @@
 <template>
     <v-flex>
-        <p class="pl-3">Server Details are currently not updated</p>
     </v-flex>
 </template>
 
 <script>
+
+    export default {
+        methods: {
+            changeTitle() {
+                this.status = 'Vue Wizards';
+                bus.$emit('titleChanged', 'Vue Wizards');
+            }
+        }
+    }
 </script>
 
 <style scoped>
